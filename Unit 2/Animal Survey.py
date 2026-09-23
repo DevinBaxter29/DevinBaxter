@@ -8,4 +8,4 @@ location = input("Where Do They Live?\n> ")                         #Get Locatio
 
 diet = input("What Does It Eat?\n> ")                               #Get Diet Of Favorite animal
 
-print("Your favorite animal is a " + favorite_animal, "because " + why_favorite + ".", "A fun fact is " + fun_fact, "it lives " + location, "it eats " + diet + ".")
+print("Your favorite animal is a " + favorite_animal, "because " + why_favorite + ".", "A fun fact is " + fun_fact, "it lives " + location, "it eats " + diet + ".")    #Print Summary Of Survey
