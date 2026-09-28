@@ -17,7 +17,7 @@ def divide(x,y):         #Divides 2 Integers
 def exponent(x,y):       #Uses Y as an Exponent
     return x ** y
 
-def modulus(x,y):        
+def modulus(x,y):        #Finds the Remainder
     return x % y
 
 def floor_division(x,y): #Uses Floor Division
