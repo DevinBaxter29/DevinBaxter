@@ -2,7 +2,7 @@
 x_value = int(input("Enter X Value\n>"))  #Get X value from User
 y_value = int(input("Enter Y Value\n>"))  #Get Y value from User
 
-def add(x, y):           #Adds 2 Integers
+def add(x,y):           #Adds 2 Integers
     return x + y
 
 def subtract(x,y):       #Subtracts 2 Integers
