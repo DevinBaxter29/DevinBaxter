@@ -11,16 +11,22 @@ def subtract(x,y):       #Subtracts 2 Integers
 def multiply(x,y):       #Multiplies 2 Integers
     return x * y
 
-def divide(x,y):         #Divides 2 Integers
+def divide(x,y):
+    if y == 0:
+        return "0"       #Divides 2 Integers
     return x / y
 
 def exponent(x,y):       #Uses Y as an Exponent
     return x ** y
 
-def modulus(x,y):        #Finds the Remainder
+def modulus(x,y):
+    if y == 0:
+        return "0"        #Finds the Remainder
     return x % y
 
-def floor_division(x,y): #Uses Floor Division
+def floor_division(x,y):
+    if y == 0:
+        return "0"                       #Uses Floor Division
     return x // y
 
 
