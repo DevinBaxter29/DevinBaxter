@@ -32,10 +32,10 @@ def floor_division(x,y):
 
 #Prints the result of all Actions
 
-print("Addition Result: ", add(x_value, y_value))
-print("Subtraction Result: ", subtract(x_value, y_value))
-print("Multiplication Result: ", multiply(x_value, y_value) )
-print("Division Result: ", divide(x_value, y_value))
-print("Exponent Result: ", exponent(x_value, y_value))
-print("Modulus Result: ", modulus(x_value, y_value))
-print("Floor Division Result: ", floor_division(x_value, y_value))
+print("Addition Result: ", round(add(x_value, y_value)))
+print("Subtraction Result: ", round(subtract(x_value, y_value)))
+print("Multiplication Result: ", round(multiply(x_value, y_value)))
+print("Division Result: ", round(divide(x_value, y_value)))
+print("Exponent Result: ", round(exponent(x_value, y_value)))
+print("Modulus Result: ", round(modulus(x_value, y_value)))
+print("Floor Division Result: ", round(floor_division(x_value, y_value)))
