@@ -1,6 +1,6 @@
 
-x_value = int(input("Enter X Value\n>"))  #Get X value from User
-y_value = int(input("Enter Y Value\n>"))  #Get Y value from User
+x_value = int(input("Enter X Value\n> "))  #Get X value from User
+y_value = int(input("Enter Y Value\n> "))  #Get Y value from User
 
 def add(x,y):           #Adds 2 Integers
     return x + y
