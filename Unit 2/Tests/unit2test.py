@@ -1,11 +1,12 @@
 
+#1
 word_one = input("Enter a word\n> ")  #Gets a Word From User
 word_two = input("Enter a word\n> ")  #Gets A word From User
 word_three = input("Enter a word\n> ") #Gets a Word From User
 
 print(word_one + word_two + word_three) #Prints Concatenation of All Words
 
-
+#2
 int_one = int(input("Enter a Integer\n> ")) #Gets A Integer From User
 int_two = int(input("Enter a Integer\n> ")) #Gets A Integer From User
 int_three = int(input("Enter a Integer\n> ")) #Gets A Integer From User
@@ -16,7 +17,7 @@ def add_three():   #Defines Function add_three
 
 add_three() #Runs\Calls The Functioh
 
-
+#3
 def data_three():  #Defines The Function data_three
     word = input("Enter a Word\n> ")  #Gets a Word From User
     int_four = int(input("Enter an Integer\n> ")) #Gets a Integer From User
