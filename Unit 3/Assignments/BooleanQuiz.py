@@ -1,9 +1,9 @@
 
-answer_one = int(input("Give a whole number that is less than 5.\n> "))
-print(answer_one < 5)
+answer_one = int(input("What type of animal is Patrick?\n> "))
+print(answer_one == "Starfish")
 
-answer_two = int(input("Give a whole number that is less than 64.\n> "))
-print(answer_two < 64)
+answer_two = int(input("What is the house does that the president lives in called?\n> "))
+print(answer_two == "White House")
 
 answer_three = input("What is the capital of Germany?\n> ")
 print(answer_three == "Berlin")
