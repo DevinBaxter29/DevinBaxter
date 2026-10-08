@@ -1,3 +1,4 @@
+print("Random Trivia")
 
 answer_one = int(input("What type of animal is Patrick?\n> "))
 print(answer_one == "Starfish")
