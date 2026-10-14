@@ -8,7 +8,7 @@ def visit_fortune_teller():  # Defines function "visit_fortune_teller"
         years = float(input("Enter how many years into the future you want to see : "))
         multiplier = float(input("Enter a multiplier number : "))
 
-    except ValueError:
+    except:
         print("Please enter valid numbers only.")
         return
 
