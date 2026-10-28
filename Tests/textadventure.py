@@ -5,13 +5,19 @@ wallet = 0
 dishes_done = False
 hands_washed = False
 showered = False
+returned_wallet = False
+job_posting_seen = False
+
+
+def menu(*options):
+    for option in options:
+        print(option)
+    return input("> ")
 
 
 def play_again():
     print("Do you want to play again?")
-    print("1. Yes")
-    print("2. No")
-    choice = input("> ")
+    choice = menu('1. Yes', '2. No')
 
     if choice == "1":
         start()
@@ -25,17 +31,17 @@ def play_again():
 def start():
     print("Welcome to Life")
     print("You stand at the entrance of your home. Do you:")
-    print("1. Enter your house")
-    print("2. Go to neighbor's yard")
-    print("3. Go to your backyard")
-
-    choice = input("> ")
+    choice = menu('1. Enter your house', "2. Go to neighbor's yard", '3. Go to your backyard', '4. Visit the grocery store', '5. Walk around the neighborhood')
     if choice == "1":
         enter_house()
     elif choice == "2":
         go_neighbors_yard()
     elif choice == "3":
         backyard()
+    elif choice == "4":
+        grocery_store()
+    elif choice == "5":
+        lost_wallet()
     else:
         print("Invalid choice. Try again.\n")
         start()
@@ -44,11 +50,7 @@ def start():
 def enter_house():
     print("You decide to enter your home.")
     print("You stand right inside your house. As you put your hat and jacket away you start to get hungry.")
-    print("1. Go to Kitchen")
-    print("2. Go to Bedroom")
-    print("3. Go to Bathroom")
-
-    choice = input("> ")
+    choice = menu('1. Go to Kitchen', '2. Go to Bedroom', '3. Go to Bathroom')
     if choice == "1":
         kitchen()
     elif choice == "2":
@@ -62,12 +64,7 @@ def enter_house():
 
 def backyard():
     print("You enter your backyard.")
-    print("1. Go Swimming")
-    print("2. Sunbathe")
-    print("3. Enter Shed")
-    print("4. Go Back")
-
-    choice = input("> ")
+    choice = menu('1. Go Swimming', '2. Sunbathe', '3. Enter Shed', '4. Go Back')
     if choice == "1":
         swim()
     elif choice == "2":
@@ -83,11 +80,7 @@ def backyard():
 
 def sunbathe():
     print("As you sit down a ball comes straight for your face.")
-    print("1. Try to block it")
-    print("2. Catch it")
-    print("3. Don't React")
-
-    choice = input("> ")
+    choice = menu('1. Try to block it', '2. Catch it', "3. Don't React")
     if choice == "1":
         block()
     elif choice == "2":
@@ -95,11 +88,7 @@ def sunbathe():
         catch_chance = random.randint(1, 5)
         if catch_chance == 2:
             print("You caught it right out of the air.")
-            print("1. Bring the ball inside")
-            print("2. Throw it back over your fence")
-            print("3. Just leave it")
-
-            choice = input("> ")
+            choice = menu('1. Bring the ball inside', '2. Throw it back over your fence', '3. Just leave it')
             if choice == "1":
                 print("You pick up the ball and walk inside to put it away.")
                 bedroom()
@@ -131,11 +120,7 @@ def block():
     block_chance = random.randint(1, 5)
     if block_chance == 2:
         print("You have blocked it!")
-        print("1. Bring the ball inside")
-        print("2. Throw it back over your fence")
-        print("3. Just leave it and go back inside")
-
-        choice = input("> ")
+        choice = menu('1. Bring the ball inside', '2. Throw it back over your fence', '3. Just leave it and go back inside')
         if choice == "1":
             print("You pick up the ball and walk inside to put it away.")
             bedroom()
@@ -156,10 +141,7 @@ def block():
 
 def shed_outside():
     print("As you get close to the shed you hear a noise.")
-    print("1. Enter")
-    print("2. Go Back")
-
-    choice = input("> ")
+    choice = menu('1. Enter', '2. Go Back')
     if choice == "1":
         shed_inside()
     elif choice == "2":
@@ -171,10 +153,7 @@ def shed_outside():
 
 def shed_inside():
     print("You open the shed and a raccoon jumps at you!")
-    print("1. Shut the door")
-    print("2. Run")
-
-    choice = input("> ")
+    choice = menu('1. Shut the door', '2. Run')
     if choice == "1":
         shut()
     elif choice == "2":
@@ -200,11 +179,7 @@ def run():
     print("You decide to run away from the raccoon!")
     print("You sprint out of the shed and into the backyard.")
     print("The raccoon is still chasing you!")
-    print("1. Run inside your house")
-    print("2. Climb over the fence")
-    print("3. Hide behind a tree")
-
-    choice = input("> ")
+    choice = menu('1. Run inside your house', '2. Climb over the fence', '3. Hide behind a tree')
 
     if choice == "1":
         print("You dash inside and slam the door shut.")
@@ -246,23 +221,14 @@ def swim():
 
     print("You approach the edge of the pool.")
     print("The water looks refreshing.")
-    print("1. Jump into the water")
-    print("2. Carefully take the pool stairs")
-    print("3. Sit by the pool")
-    print("4. Go back to the backyard")
-
-    choice = input("> ")
+    choice = menu('1. Jump into the water', '2. Carefully take the pool stairs', '3. Sit by the pool', '4. Go back to the backyard')
 
     if choice == "1":
         print("You jump into the pool and enjoy the cool water!")
         showered = False
 
         print("You climb out of the pool, dripping wet.")
-        print("1. Go inside and take a shower")
-        print("2. Dry off in the sun")
-        print("3. Go back into the pool")
-
-        choice = input("> ")
+        choice = menu('1. Go inside and take a shower', '2. Dry off in the sun', '3. Go back into the pool')
 
         if choice == "1":
             print("You head inside to get cleaned up.")
@@ -280,10 +246,7 @@ def swim():
     elif choice == "2":
         print("You carefully descend the pool stairs.")
         print("You reach the water safely.")
-        print("1. Swim around")
-        print("2. Get out of the pool")
-
-        choice = input("> ")
+        choice = menu('1. Swim around', '2. Get out of the pool')
 
         if choice == "1":
             print("You swim around and have a great time!")
@@ -299,10 +262,7 @@ def swim():
 
     elif choice == "3":
         print("You sit beside the pool and dip your feet in.")
-        print("1. Relax a little longer")
-        print("2. Get up and go back")
-
-        choice = input("> ")
+        choice = menu('1. Relax a little longer', '2. Get up and go back')
 
         if choice == "1":
             print("You relax by the pool and enjoy the sunshine.")
@@ -324,11 +284,7 @@ def swim():
 def go_neighbors_yard():
     print("You sneak into your neighbor's yard.")
     print("As you enter, you see your neighbor watering their plants.")
-    print("1. Sneak past the neighbor")
-    print("2. Talk to the neighbor")
-    print("3. Go back to your house")
-
-    choice = input("> ")
+    choice = menu('1. Sneak past the neighbor', '2. Talk to the neighbor', '3. Go back to your house')
 
     if choice == "1":
         print("You try to sneak past the neighbor.")
@@ -336,10 +292,7 @@ def go_neighbors_yard():
 
         if sneak_chance == 1:
             print("The neighbor spots you!")
-            print("1. Apologize")
-            print("2. Run away")
-
-            choice = input("> ")
+            choice = menu('1. Apologize', '2. Run away')
 
             if choice == "1":
                 print("You apologize for entering their yard.")
@@ -355,10 +308,7 @@ def go_neighbors_yard():
         else:
             print("You sneak past the neighbor successfully!")
             print("You arrive at the swimming pool.")
-            print("1. Go swimming")
-            print("2. Sneak back home")
-
-            choice = input("> ")
+            choice = menu('1. Go swimming', '2. Sneak back home')
 
             if choice == "1":
                 swim()
@@ -370,10 +320,7 @@ def go_neighbors_yard():
 
     elif choice == "2":
         print("You walk over and greet your neighbor.")
-        print("1. Ask if you can use the pool")
-        print("2. Say goodbye and leave")
-
-        choice = input("> ")
+        choice = menu('1. Ask if you can use the pool', '2. Say goodbye and leave')
 
         if choice == "1":
             print("Your neighbor agrees to let you use the pool!")
@@ -396,11 +343,7 @@ def go_neighbors_yard():
 
 def kitchen():
     global hands_washed, dishes_done
-    print("1. Open Fridge")
-    print("2. Do the Dishes")
-    print("3. Wash your Hands")
-
-    choice = input("> ")
+    choice = menu('1. Open Fridge', '2. Do the Dishes', '3. Wash your Hands')
     if choice == "1":
         if hands_washed and dishes_done:
             open_fridge()
@@ -417,10 +360,7 @@ def kitchen():
 
 
 def bedroom():
-    print("1. Make Bed")
-    print("2. Go to Sleep")
-
-    choice = input("> ")
+    choice = menu('1. Make Bed', '2. Go to Sleep')
     if choice == "1":
         make_bed()
     elif choice == "2":
@@ -432,22 +372,14 @@ def bedroom():
 
 def bathroom():
     print("You enter the bathroom.")
-    print("1. Take a Shower")
-    print("2. Brush Your Teeth")
-    print("3. Look in the Medicine Cabinet")
-    print("4. Return to the House")
-
-    choice = input("> ")
+    choice = menu('1. Take a Shower', '2. Brush Your Teeth', '3. Look in the Medicine Cabinet', '4. Return to the House')
 
     if choice == "1":
         shower()
 
     elif choice == "2":
         print("You pick up your toothbrush.")
-        print("1. Brush your teeth")
-        print("2. Skip it and leave")
-
-        choice = input("> ")
+        choice = menu('1. Brush your teeth', '2. Skip it and leave')
 
         if choice == "1":
             print("You brush your teeth until they feel clean.")
@@ -463,11 +395,7 @@ def bathroom():
     elif choice == "3":
         print("You open the medicine cabinet.")
         print("Inside, you find a bandage and a bottle of vitamins.")
-        print("1. Take a bandage")
-        print("2. Take vitamins")
-        print("3. Close the cabinet")
-
-        choice = input("> ")
+        choice = menu('1. Take a bandage', '2. Take vitamins', '3. Close the cabinet')
 
         if choice == "1":
             print("You put the bandage in your pocket.")
@@ -494,19 +422,10 @@ def bathroom():
 def open_fridge():
     print("You have decided to open the fridge.")
     print("You have 2 cheeses, 2 types of sandwich meats, and 1 condiment.")
-    print("1. Swiss, Ham, Mayo")
-    print("2. Swiss, Turkey, Mayo")
-    print("3. American, Ham, Mayo")
-    print("4. American, Turkey, Mayo")
-    print("5. Decide not to eat")
-
-    choice = input("> ")
+    choice = menu('1. Swiss, Ham, Mayo', '2. Swiss, Turkey, Mayo', '3. American, Ham, Mayo', '4. American, Turkey, Mayo', '5. Decide not to eat')
     if choice in ("1", "2", "3", "4"):
         print("Your sandwich looks absolutely perfect.")
-        print("1. Eat it right now at the table")
-        print("2. Take it outside to enjoy the sunshine")
-
-        food_choice = input("> ")
+        food_choice = menu('1. Eat it right now at the table', '2. Take it outside to enjoy the sunshine')
         if food_choice == "1":
             print("Delicious! You happily finish your lunch and feel great.")
             print("Ending 9: A Well Fed Life")
@@ -530,12 +449,7 @@ def open_fridge():
 def sleep():
     print("You enter your bedroom and feel extremely tired.")
     print("You lie down on your bed, but you aren't sure if you should sleep yet.")
-    print("1. Go to sleep immediately")
-    print("2. Get a snack first")
-    print("3. Set an alarm and then sleep")
-    print("4. Get back up and make your bed")
-
-    choice = input("> ")
+    choice = menu('1. Go to sleep immediately', '2. Get a snack first', '3. Set an alarm and then sleep', '4. Get back up and make your bed')
 
     if choice == "1":
         print("You were too tired to do anything else.")
@@ -596,10 +510,7 @@ def do_dishes():
     global dishes_done
     print("You look at the full sink and decide to do dishes.")
     dishes_done = True
-    print("1. Leave Kitchen")
-    print("2. Wash Hands")
-
-    choice = input("> ")
+    choice = menu('1. Leave Kitchen', '2. Wash Hands')
     if choice == "1":
         enter_house()
     elif choice == "2":
@@ -621,6 +532,85 @@ def wash_hands():
     else:
         print("Invalid Choice. Try Again\n")
         wash_hands()
+
+
+
+
+def grocery_store():
+    global wallet, job_posting_seen
+
+    print("\nYou walk to the grocery store.")
+    if job_posting_seen:
+        print("You recognize the job flyer you saw earlier.")
+    print("You have $", wallet, "in your wallet.")
+    snack_price = 3 if returned_wallet else 5
+    if returned_wallet:
+        print("The store clerk heard you returned a lost wallet and offers you a discount.")
+    print("What would you like to do?")
+    print("1. Buy a snack for $",snack_price)
+    choice = menu('2. Save your money and go home', '3. Look at the job board')
+
+    if choice == "1":
+        if wallet >= snack_price:
+            wallet -= snack_price
+            print("You buy a snack and enjoy it on the way home.")
+            print("Money remaining: $", wallet)
+            start()
+        else:
+            print("You don't have enough money for the snack.")
+            print("You decide to head home and save up.")
+            start()
+    elif choice == "2":
+        print("You decide to keep your money and head home.")
+        start()
+    elif choice == "3":
+        job_posting_seen = True
+        print("You see a flyer advertising a part-time job.")
+        print("You remember the information in case you want to look for work later.")
+        start()
+    else:
+        print("Invalid choice. Try again.\n")
+        grocery_store()
+
+
+def lost_wallet():
+    global wallet, returned_wallet
+
+    print("\nWhile walking around the neighborhood, you notice a wallet on the sidewalk.")
+    print("What do you do?")
+    choice = menu('1. Return it to its owner', '2. Look inside for identification', '3. Leave it where you found it')
+
+    if choice == "1":
+        print("You find the owner's address on a card and return the wallet.")
+        print("The grateful owner gives you $10 as a thank-you.")
+        wallet += 10
+        returned_wallet = True
+        print("You now have $", wallet)
+        start()
+    elif choice == "2":
+        print("You find an ID card with the owner's name and address.")
+        follow_up = menu('1. Take the wallet to the owner', '2. Leave the wallet where you found it')
+
+        if follow_up == "1":
+            print("You return the wallet to its owner.")
+            print("The grateful owner gives you $10 as a thank-you.")
+            wallet += 10
+            returned_wallet = True
+            print("You now have $", wallet)
+            start()
+        elif follow_up == "2":
+            print("You put the wallet back and continue your walk.")
+            start()
+        else:
+            print("Invalid choice. Try again.\n")
+            lost_wallet()
+    elif choice == "3":
+        print("You leave the wallet where it is and head home.")
+        start()
+    else:
+        print("Invalid choice. Try again.\n")
+        lost_wallet()
+
 
 
 start()
