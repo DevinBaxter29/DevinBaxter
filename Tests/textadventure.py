@@ -14,15 +14,27 @@ def menu(*options):
         print(option)
     return input("> ")
 
-
 def play_again():
+    global wallet, dishes_done, hands_washed, showered
+    global returned_wallet, job_posting_seen
+
     print("Do you want to play again?")
     choice = menu('1. Yes', '2. No')
 
     if choice == "1":
+        wallet = 0
+        dishes_done = False
+        hands_washed = False
+        showered = False
+        returned_wallet = False
+        job_posting_seen = False
+
+        print("\nStarting a new game!\n")
         start()
+
     elif choice == "2":
         print("Thanks for playing Life!")
+
     else:
         print("Invalid choice. Try again.")
         play_again()
