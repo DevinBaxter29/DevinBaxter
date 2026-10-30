@@ -9,10 +9,16 @@ returned_wallet = False
 job_posting_seen = False
 
 
+
 def menu(*options):
     for option in options:
         print(option)
-    return input("> ")
+    try:
+        return input("> ")
+    except (ValueError, TypeError):
+        print("Invalid input. Try again.")
+        return menu(*options)
+
 
 def play_again():
     global wallet, dishes_done, hands_washed, showered
