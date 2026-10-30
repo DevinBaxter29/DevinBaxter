@@ -18,6 +18,7 @@ def play_again():
     global wallet, dishes_done, hands_washed, showered
     global returned_wallet, job_posting_seen
 
+
     print("Do you want to play again?")
     choice = menu('1. Yes', '2. No')
 
