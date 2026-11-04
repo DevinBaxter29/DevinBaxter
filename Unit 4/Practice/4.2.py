@@ -4,9 +4,10 @@ countdown = (10,9,8,7,6,5,4,3,2,1)
 for x in countdown:
     print(x)
 
+sum = 0
 for x in countdown:
-    total_sum = sum(countdown)
-print(total_sum)
+    sum = sum + x
+print(sum)
 
 list_one = (1,2,3,4,5)
 
