@@ -1,4 +1,4 @@
-countdown = [10,9,8,7,6,5,4,3,2,1]
+countdown = [1,2,3,4,5,6,7,8,9,10]
 
 
 for x in countdown:
@@ -26,7 +26,7 @@ print(count)
 number = int(input("Enter a number\n> "))
 
 for x in countdown:
-    print(str(number) + " x " + str(x) + " = " + str(number * x))
+    print(str(number) + " * " + str(x) + " = " + str(number * x))
 
 
 names = ["Alice", "Bob", "Charlie","Mark","Alexa"]
