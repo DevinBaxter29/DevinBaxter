@@ -1,0 +1,26 @@
+#Blinky
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    for i in range(0,10):
+        cp.pixels[i] = (0, 255, 0)
+    time.sleep(0.367)
+
+    for i in range(0, 10):
+        cp.pixels[i] = (0, 0, 0)
+    time.sleep(0.367)
+
+#Woosh
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    if cp.button_a:
+        for i in range(10):
+            cp.pixels[i] = (0, 0, 5)
+            time.sleep(0.1)
+            cp.pixels[i] = (0, 0, 0)
+            time.sleep(0.1)
+
+#
