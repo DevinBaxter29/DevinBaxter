@@ -140,3 +140,20 @@ while True:
             g = random.randint(0, 200)
             b = random.randint(0, 200)
             cp.pixels[i] = (r, g, b)
+
+#Dice
+from adafruit_circuitplayground import cp
+import random
+import time
+
+while True:
+    if cp.button_a:
+        cp.pixels.fill((0, 0, 0))
+        num = random.randint(1, 10)
+        for i in range(0, num):
+            cp.pixels[i] = (0, 0, 10)
+        time.sleep(0.2)
+
+    if cp.button_b:
+        cp.pixels.fill((0, 0, 0))
+        time.sleep(0.2)
