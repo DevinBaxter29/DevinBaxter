@@ -109,3 +109,19 @@ while True:
         cp.pixels[9] = (1, 0, 0)
     else:
         cp.pixels[9] = (0, 0, 0)
+
+#Police Simulator
+
+from adafruit_circuitplayground import cp
+import time
+
+while True:
+    for i in range(0,10):
+        cp.pixels[i] = (10, 0, 0)
+    cp.play_tone(500, 0.5)
+    time.sleep(0.5)
+
+    for i in range(0, 10):
+        cp.pixels[i] = (0, 0, 10)
+    cp.play_tone(900, 0.5)
+    time.sleep(0.5)
