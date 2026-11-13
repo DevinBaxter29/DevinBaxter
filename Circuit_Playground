@@ -125,3 +125,18 @@ while True:
         cp.pixels[i] = (0, 0, 10)
     cp.play_tone(900, 0.5)
     time.sleep(0.5)
+
+#Randomizer
+from adafruit_circuitplayground import cp
+import random
+
+shake_threshold = 15.0
+
+while True:
+    x, y, z = cp.acceleration
+    if abs(x) > shake_threshold or abs(y) > shake_threshold or abs(z) > shake_threshold:
+        for i in range(0, 10):
+            r = random.randint(0, 200)
+            g = random.randint(0, 200)
+            b = random.randint(0, 200)
+            cp.pixels[i] = (r, g, b)
